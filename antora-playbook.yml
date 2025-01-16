@@ -6,6 +6,13 @@ content:
   sources:
   - url: .
     branches: HEAD
+    start_path: project-pippo
+  - url: .
+    branches: HEAD
+    start_path: project-pluto
+  - url: https://github.com/ThomasVitale/test-project.git
+    branches: ~
+    tags: v*
   - url: https://gitlab.com/antora/demo/demo-component-a.git
     branches: HEAD
   - url: https://gitlab.com/antora/demo/demo-component-b.git

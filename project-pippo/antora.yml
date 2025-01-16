@@ -1,0 +1,7 @@
+name: project-pippo
+version: ~
+title: Project Pippo
+nav:
+- modules/ROOT/nav.adoc
+- modules/authentication/nav.adoc
+- modules/integrations/nav.adoc
