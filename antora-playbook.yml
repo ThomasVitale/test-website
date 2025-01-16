@@ -1,7 +1,6 @@
 site:
   title: Open Docs
-  #start_page: project-name::index.adoc
-  start_page: component-b::index.adoc
+  start_page: project-pippo::index.adoc
 content:
   sources:
   - url: .
