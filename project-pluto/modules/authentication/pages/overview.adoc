@@ -1,0 +1,61 @@
+= Authentication Overview
+:description: Overview of authentication options in Project Pluto
+
+== Introduction
+
+Project Pluto provides comprehensive authentication and authorization support to secure your applications. This guide covers the available authentication mechanisms and how to implement them.
+
+== Authentication Methods
+
+Project Pluto supports several authentication methods out of the box:
+
+* OAuth 2.0 / OpenID Connect
+* JWT Authentication
+* Basic Authentication
+* Form-based Authentication
+* API Key Authentication
+
+== Security Features
+
+=== Built-in Security
+
+Project Pluto comes with built-in security features:
+
+* CSRF Protection
+* Session Management
+* Password Encoding
+* Role-based Access Control
+
+=== Customization Options
+
+You can customize security settings through:
+
+* Configuration Properties
+* Custom Security Filters
+* Authentication Providers
+* User Details Service
+
+== Getting Started with Authentication
+
+To enable authentication in your Pluto application:
+
+[source,yaml]
+----
+pluto:
+  security:
+    enabled: true
+    default-authentication: oauth2
+----
+
+== Next Steps
+
+* Learn about xref:oauth2.adoc[OAuth2 Configuration]
+* Explore JWT token authentication
+* Set up role-based access control
+
+== Best Practices
+
+* Always use HTTPS in production
+* Implement proper password hashing
+* Regular security audits
+* Keep dependencies updated

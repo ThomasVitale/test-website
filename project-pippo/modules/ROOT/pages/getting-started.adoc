@@ -1,0 +1,64 @@
+= Getting Started with Project Pippo
+:description: Learn how to get started with Project Pippo
+
+== Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+* Java 17 or later
+* Maven 3.8.0 or later
+* Your favorite IDE
+
+== Installation
+
+[source,xml]
+----
+<dependency>
+    <groupId>com.example</groupId>
+    <artifactId>project-pippo</artifactId>
+    <version>1.0.0</version>
+</dependency>
+----
+
+== Basic Configuration
+
+Create a `application.yml` file in your project:
+
+[source,yaml]
+----
+pippo:
+  application:
+    name: my-pippo-app
+  security:
+    enabled: true
+  server:
+    port: 8080
+----
+
+== Creating Your First Pippo Application
+
+[source,java]
+----
+@PippoApplication
+public class MyApplication {
+    public static void main(String[] args) {
+        PippoBootstrap.run(MyApplication.class);
+    }
+}
+----
+
+== Next Steps
+
+Now that you have your first Pippo application running, you might want to:
+
+* Learn about xref:authentication:overview.adoc[authentication options]
+* Explore xref:integrations:overview.adoc[available integrations]
+* Check out our sample applications on GitHub
+
+== Need Help?
+
+If you run into any issues:
+
+* Check our troubleshooting guide
+* Join our community forum
+* Submit an issue on GitHub

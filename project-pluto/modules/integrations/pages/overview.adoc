@@ -1,9 +1,9 @@
 = Integrations Overview
-:description: Overview of Project Pippo integrations
+:description: Overview of Project Pluto integrations
 
 == Introduction
 
-Project Pippo provides seamless integration capabilities with various external services and systems. This guide covers the available integrations and how to implement them in your applications.
+Project Pluto provides seamless integration capabilities with various external services and systems. This guide covers the available integrations and how to implement them in your applications.
 
 == Available Integrations
 
@@ -31,7 +31,7 @@ Project Pippo provides seamless integration capabilities with various external s
 
 == Integration Patterns
 
-Project Pippo supports various integration patterns:
+Project Pluto supports various integration patterns:
 
 * REST APIs
 * Message Queues
@@ -41,7 +41,7 @@ Project Pippo supports various integration patterns:
 
 == Common Features
 
-All integrations in Project Pippo share these features:
+All integrations in Project Pluto share these features:
 
 * Configuration Management
 * Health Checks
@@ -57,7 +57,7 @@ To use any integration, add the appropriate dependency:
 ----
 <dependency>
     <groupId>com.example</groupId>
-    <artifactId>project-pippo-integration-[name]</artifactId>
+    <artifactId>project-pluto-integration-[name]</artifactId>
     <version>1.0.0</version>
 </dependency>
 ----

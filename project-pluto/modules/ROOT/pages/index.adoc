@@ -1,3 +1,27 @@
-= Welcome!
+= Project Pluto
+:description: Welcome to Project Pluto documentation
+:page-layout: home
 
-You are home.
+[.hero]
+Welcome to Project Pluto! This documentation will help you get started with our platform and explore its features.
+
+== What is Project Pluto?
+
+Project Pluto is an innovative platform that helps developers build and deploy applications with ease. Whether you're building a microservice, a web application, or a complex distributed system, Project Pluto has got you covered.
+
+== Key Features
+
+* *Simple Configuration* - Get started quickly with sensible defaults
+* *Security First* - Built-in security features and OAuth2 support
+* *API Integration* - Easy integration with external services
+* *Cloud Native* - Designed for modern cloud environments
+
+== Quick Start
+
+To get started with Project Pluto, check out our xref:getting-started.adoc[Getting Started Guide].
+
+== Documentation Structure
+
+* xref:getting-started.adoc[Getting Started] - Quick start guide and basic concepts
+* xref:authentication:overview.adoc[Authentication] - Security and authentication features
+* xref:integrations:overview.adoc[Integrations] - External service integrations

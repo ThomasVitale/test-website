@@ -1,0 +1,11 @@
+= New Page
+
+You've found a new page.
+
+== First Paragraph
+
+Something
+
+== Second Paragraph
+
+Something else

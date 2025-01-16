@@ -1,0 +1,64 @@
+= Getting Started with Project Pluto
+:description: Learn how to get started with Project Pluto
+
+== Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+* Java 17 or later
+* Maven 3.8.0 or later
+* Your favorite IDE
+
+== Installation
+
+[source,xml]
+----
+<dependency>
+    <groupId>com.example</groupId>
+    <artifactId>project-pluto</artifactId>
+    <version>1.0.0</version>
+</dependency>
+----
+
+== Basic Configuration
+
+Create a `application.yml` file in your project:
+
+[source,yaml]
+----
+pluto:
+  application:
+    name: my-pluto-app
+  security:
+    enabled: true
+  server:
+    port: 8080
+----
+
+== Creating Your First Pluto Application
+
+[source,java]
+----
+@PlutoApplication
+public class MyApplication {
+    public static void main(String[] args) {
+        PlutoBootstrap.run(MyApplication.class);
+    }
+}
+----
+
+== Next Steps
+
+Now that you have your first Pluto application running, you might want to:
+
+* Learn about xref:authentication:overview.adoc[authentication options]
+* Explore xref:integrations:overview.adoc[available integrations]
+* Check out our sample applications on GitHub
+
+== Need Help?
+
+If you run into any issues:
+
+* Check our troubleshooting guide
+* Join our community forum
+* Submit an issue on GitHub

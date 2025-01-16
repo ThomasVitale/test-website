@@ -1,0 +1,172 @@
+= API Integration Guide
+:description: Guide for integrating external APIs with Project Pluto
+
+== Introduction
+
+This guide explains how to integrate external APIs with your Project Pluto application using the built-in HTTP client and API integration features.
+
+== HTTP Client Configuration
+
+=== Basic Setup
+
+Add the HTTP client dependency:
+
+[source,xml]
+----
+<dependency>
+    <groupId>com.example</groupId>
+    <artifactId>project-pluto-http-client</artifactId>
+    <version>1.0.0</version>
+</dependency>
+----
+
+=== Client Configuration
+
+[source,yaml]
+----
+pluto:
+  http-client:
+    connect-timeout: 5000
+    read-timeout: 5000
+    max-connections: 100
+    retry:
+      max-attempts: 3
+      backoff:
+        initial-interval: 1000
+----
+
+== Making API Requests
+
+=== REST Template
+
+[source,java]
+----
+@Service
+public class ExternalApiService {
+    private final PlutoRestTemplate restTemplate;
+
+    public ExternalApiService(PlutoRestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
+
+    public ApiResponse callExternalApi() {
+        return restTemplate.get()
+            .uri("/api/resource")
+            .header("Authorization", "Bearer " + token)
+            .retrieve()
+            .body(ApiResponse.class);
+    }
+}
+----
+
+=== WebClient (Reactive)
+
+[source,java]
+----
+@Service
+public class ReactiveApiService {
+    private final PlutoWebClient webClient;
+
+    public Flux<ApiData> streamData() {
+        return webClient.get()
+            .uri("/api/stream")
+            .retrieve()
+            .bodyToFlux(ApiData.class);
+    }
+}
+----
+
+== Error Handling
+
+=== Circuit Breaker Pattern
+
+[source,java]
+----
+@CircuitBreaker(name = "externalApi")
+public ApiResponse callWithCircuitBreaker() {
+    return restTemplate.get()
+        .uri("/api/protected-resource")
+        .retrieve()
+        .body(ApiResponse.class);
+}
+----
+
+=== Retry Configuration
+
+[source,yaml]
+----
+pluto:
+  resilience4j:
+    retry:
+      instances:
+        externalApi:
+          max-attempts: 3
+          wait-duration: 1s
+----
+
+== Authentication
+
+=== OAuth2 Client Credentials
+
+[source,yaml]
+----
+pluto:
+  security:
+    oauth2:
+      client:
+        registration:
+          external-api:
+            authorization-grant-type: client_credentials
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_SECRET}
+----
+
+== Rate Limiting
+
+=== Client-Side Rate Limiting
+
+[source,java]
+----
+@RateLimiter(name = "externalApi")
+public ApiResponse callWithRateLimit() {
+    return restTemplate.get()
+        .uri("/api/rate-limited")
+        .retrieve()
+        .body(ApiResponse.class);
+}
+----
+
+== Monitoring and Metrics
+
+=== Micrometer Integration
+
+[source,java]
+----
+@Timed(value = "api.call.duration")
+public ApiResponse callWithMetrics() {
+    return restTemplate.get()
+        .uri("/api/monitored")
+        .retrieve()
+        .body(ApiResponse.class);
+}
+----
+
+== Best Practices
+
+* Use appropriate timeouts
+* Implement circuit breakers
+* Handle rate limiting
+* Monitor API health
+* Secure credentials
+* Log API interactions
+* Use DTOs for data mapping
+
+== Troubleshooting
+
+Common issues and solutions:
+
+* Connection timeouts
+* Authentication failures
+* Rate limit exceeded
+* Invalid response formats
+* SSL/TLS issues
