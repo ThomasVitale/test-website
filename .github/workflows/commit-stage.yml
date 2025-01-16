@@ -34,10 +34,14 @@ jobs:
       run: npm ci
     - name: Generate Site
       run: npx antora antora-playbook.yml
+    - name: Move Antora Site to Website
+      run: |
+        mkdir -p website/docs
+        mv build/site/* website/docs/
     - name: Upload Artifacts
       uses: actions/upload-pages-artifact@v3
       with:
-        path: build/site
+        path: website
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
