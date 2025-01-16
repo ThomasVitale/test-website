@@ -13,10 +13,6 @@ content:
   - url: https://github.com/ThomasVitale/test-project.git
     branches: ~
     tags: v*
-  - url: https://gitlab.com/antora/demo/demo-component-a.git
-    branches: HEAD
-  - url: https://gitlab.com/antora/demo/demo-component-b.git
-    branches: [v2.0, v1.0]
     start_path: docs
 ui:
   bundle:
