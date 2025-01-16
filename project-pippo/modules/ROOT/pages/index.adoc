@@ -1,6 +1,5 @@
 = Project Pippo
 :description: Welcome to Project Pippo documentation
-:page-layout: home
 
 [.hero]
 Welcome to Project Pippo! This documentation will help you get started with our platform and explore its features.

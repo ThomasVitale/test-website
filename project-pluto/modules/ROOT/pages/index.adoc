@@ -1,6 +1,5 @@
 = Project Pluto
 :description: Welcome to Project Pluto documentation
-:page-layout: home
 
 [.hero]
 Welcome to Project Pluto! This documentation will help you get started with our platform and explore its features.
